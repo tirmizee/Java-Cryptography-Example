@@ -6,13 +6,13 @@
 
 #### Generating a Key Pair
 
-    KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+    	KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
 	
-		keyPairGenerator.initialize(2048);
-		KeyPair keyPair = keyPairGenerator.generateKeyPair();
-		
-		PrivateKey privateKey = keyPair.getPrivate();
-		PublicKey publicKey = keyPair.getPublic();
+	keyPairGenerator.initialize(2048);
+	KeyPair keyPair = keyPairGenerator.generateKeyPair();
+
+	PrivateKey privateKey = keyPair.getPrivate();
+	PublicKey publicKey = keyPair.getPublic();
 
 ### Reference
 
