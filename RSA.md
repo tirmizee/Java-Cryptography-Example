@@ -16,6 +16,18 @@
 	PrivateKey privateKey = keyPair.getPrivate();           //Private Key
 	PublicKey publicKey = keyPair.getPublic();              //Public Key
 
+#### Saving the Keys in Binary Format
+
+	String file = "D:\\Generate RSA\\private.key";
+	FileOutputStream outFilePrivateKey = new FileOutputStream(file);
+	outFilePrivateKey.write(privateKey.getEncoded());
+	outFilePrivateKey.close();
+
+	String file = "D:\\Generate RSA\\public.key";
+	FileOutputStream outFilePublicKey = new FileOutputStream(file);
+	outFilePublicKey.write(publicKey.getEncoded());
+	outFilePublicKey.close();
+
 ### Reference
 
 - https://www.novixys.com/blog/how-to-generate-rsa-keys-java/
