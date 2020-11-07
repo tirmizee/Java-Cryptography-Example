@@ -49,7 +49,19 @@
 	out.write("\n-----END RSA PUBLIC KEY-----\n");
 	out.close();
 
-#### Load Key from File
+#### Load Private Key from File
+
+	String keyFile = "D:\\Generate RSA\\private.key";
+	Path path = Paths.get(keyFile);
+	byte[] bytes = Files.readAllBytes(path);
+
+	PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(bytes);
+	KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+	PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
+	System.out.println(privateKey.getAlgorithm() + privateKey.getFormat()); //RSA PKCS#8
+
+
+#### Load Public Key from File
 
 ### Reference
 
