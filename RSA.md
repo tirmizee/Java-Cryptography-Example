@@ -12,9 +12,9 @@
 	keyPairGenerator.initialize(3072); //RS384
 	keyPairGenerator.initialize(4096); //RS512
 
-	KeyPair keyPair = keyPairGenerator.generateKeyPair();
-	PrivateKey privateKey = keyPair.getPrivate();
-	PublicKey publicKey = keyPair.getPublic();
+	KeyPair keyPair = keyPairGenerator.generateKeyPair();   //Key Pair
+	PrivateKey privateKey = keyPair.getPrivate();           //Private Key
+	PublicKey publicKey = keyPair.getPublic();              //Public Key
 
 ### Reference
 
