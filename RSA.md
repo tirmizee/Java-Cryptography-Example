@@ -8,9 +8,11 @@
 
 	KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
 	
-	keyPairGenerator.initialize(2048);
-	KeyPair keyPair = keyPairGenerator.generateKeyPair();
+	keyPairGenerator.initialize(2048); //RS256
+	keyPairGenerator.initialize(3072); //RS384
+	keyPairGenerator.initialize(4096); //RS512
 
+	KeyPair keyPair = keyPairGenerator.generateKeyPair();
 	PrivateKey privateKey = keyPair.getPrivate();
 	PublicKey publicKey = keyPair.getPublic();
 
