@@ -28,6 +28,11 @@
 	outFilePublicKey.write(publicKey.getEncoded());
 	outFilePublicKey.close();
 
+#### Checking the Keys format
+
+	System.err.println(privateKey.getFormat()); // PKCS#8
+	System.err.println(publicKey.getFormat());  // X.509
+
 ### Reference
 
 - https://www.novixys.com/blog/how-to-generate-rsa-keys-java/
