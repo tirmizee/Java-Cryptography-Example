@@ -6,7 +6,7 @@
 
 #### Generating a Key Pair
 
-	KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+	KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA"); //Algorithm 
 	
 	keyPairGenerator.initialize(2048); //RS256
 	keyPairGenerator.initialize(3072); //RS384
