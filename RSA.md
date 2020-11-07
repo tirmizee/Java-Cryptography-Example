@@ -16,6 +16,11 @@
 	PrivateKey privateKey = keyPair.getPrivate();           //Private Key
 	PublicKey publicKey = keyPair.getPublic();              //Public Key
 
+#### Checking the Keys format
+
+	System.err.println(privateKey.getFormat()); // PKCS#8
+	System.err.println(publicKey.getFormat());  // X.509
+
 #### Saving the Keys in Binary Format
 
 	String file = "D:\\Generate RSA\\private.key";
@@ -28,10 +33,21 @@
 	outFilePublicKey.write(publicKey.getEncoded());
 	outFilePublicKey.close();
 
-#### Checking the Keys format
+#### Saving the Keys in Text Format
 
-	System.err.println(privateKey.getFormat()); // PKCS#8
-	System.err.println(publicKey.getFormat());  // X.509
+	String outFile = "D:\\Generate RSA\\private.key";
+	Writer out = new FileWriter(outFile);
+	out.write("-----BEGIN RSA PRIVATE KEY-----\n");
+	out.write(encoder.encodeToString(privateKey.getEncoded()));
+	out.write("\n-----END RSA PRIVATE KEY-----\n");
+	out.close();
+
+	String outFile = "D:\\Generate RSA\\public.key";
+	Writer out = new FileWriter(outFile + "public.key");
+	out.write("-----BEGIN RSA PUBLIC KEY-----\n");
+	out.write(encoder.encodeToString(publicKey.getEncoded()));
+	out.write("\n-----END RSA PUBLIC KEY-----\n");
+	out.close();
 
 ### Reference
 
