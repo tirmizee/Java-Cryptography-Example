@@ -63,6 +63,15 @@
 
 #### Load Public Key from File
 
+	String keyFile = "D:\\Generate RSA\\public.key";
+	Path path = Paths.get(keyFile);
+	byte[] bytes = Files.readAllBytes(path);
+
+	X509EncodedKeySpec keySpec = new X509EncodedKeySpec(bytes);
+	KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+	PublicKey publicKey = keyFactory.generatePublic(keySpec);
+	System.out.println(publicKey.getAlgorithm() + publicKey.getFormat()); //RSA X.509
+
 ### Reference
 
 - https://www.novixys.com/blog/how-to-generate-rsa-keys-java/
